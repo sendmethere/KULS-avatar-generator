@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.DS_Store
+test-results/
+.env
+.env.*
+!.env.example
+*.log
+*.blend1
+*.blend2
+# Keep current previews; older development screenshots stay local.
+examples/*.png
+!examples/refinements.png
+!examples/skirt-walk.png
+!examples/studio-desktop.png
+!examples/studio-mobile.png
