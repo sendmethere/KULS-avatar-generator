@@ -74,6 +74,94 @@
   .topbar { gap: 9px; }
   .language-toggle { min-width: 34px; height: 29px; padding: 0 6px; font-size: 9px; }
 }
+
+/* KULS brand accent */
+:root { --green: #76020E; --line: #EDE3DA; background: #F8F4F0; }
+body { background: #F8F4F0; }
+.topbar, .workspace-tabs, .library, .editor { background: #FFFCF8; }
+.stage-wrap { background: #F8F4F0; }
+#viewport { background: radial-gradient(ellipse at 50% 48%, #FFFDF7 0, #F8F4F0 63%, #EDE3DA 100%); }
+.random-card { background: #FFF0CC; border-color: #E6D59E; color: #6D281F; }
+.random-card small { color: #8A6550; }
+.language-toggle { background: #FFF8E4; border-color: #E6D59E; color: #76020E; }
+.language-toggle:hover { background: #FFF0CC; color: #57000A; }
+.workspace-tabs > button[aria-selected=true] { background: #FFF8E4; }
+.classroom-panel { background: #F8F4F0; }
+.classroom-scene { border-color: #EDE3DA; }
+.classroom-info { background: #FFFCF8; border-color: #EDE3DA; }
+
+/* Replace the original sage UI surfaces with the KULS warm palette. */
+button:hover { background: #F4E8E5; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline-color: #76020E; }
+.topbar { border-color: #EDE3DA; }
+.brand small, .top-center, .library-title p, .preset > small, .library-note, .editor-bottom, .stage-footer { color: #8C7773; }
+.divider, .eyebrow { color: #AA918C; }
+.random-card:hover { background: #FFE7A8; }
+.preset { background: #FFF9F3; }
+.preset:hover { background: #F7E9E5; }
+.preset.selected { border-color: #A54A52; background: #FFF0F1; }
+.section-line > span, .slider-control output { background: #F3E7E2; color: #855C57; }
+.stage-heading .undo-group, .view-tabs, .stage-tools, .pose-select { border-color: #EDE3DA; background-color: #FFFCF8; }
+.view-tabs button.active { color: #76020E; }
+.icon-btn { color: #8A6E69; }
+.icon-btn.active { color: #76020E; background: #F5E4E6; }
+.editor-tabs { border-color: #EDE3DA; }
+.editor-tabs button { color: #9B8580; }
+.control-block { border-color: #F0E5DF; }
+.choices button { border-color: #EDE3DA; background: #FFFCF8; color: #876F6A; }
+.choices button.active { border-color: #B85B64; background: #FFF0F1; color: #76020E; }
+.swatch { box-shadow: 0 0 0 1px #E7D8D2; }
+.swatch.active { box-shadow: 0 0 0 2px #76020E; }
+input[type=range] { background: linear-gradient(to right, #9D303B 0%, #9D303B var(--percent), #EDE3DA var(--percent), #EDE3DA 100%); }
+input[type=range]::-webkit-slider-thumb { border-color: #9D303B; }
+input[type=range]::-moz-range-thumb { border-color: #9D303B; }
+.tip { background: #FFF0CC; color: #795F45; }
+.wide-button { border-color: #E7D2D0; color: #76020E; background: #FFFCF8; }
+dialog { border-color: #EDE3DA; background: #FFFCF8; color: #4B322D; }
+.editor-bottom, .stage-footer { border-color: #EDE3DA; background: #FFF9F3; }
+.workspace-tabs { border-color: #EDE3DA; }
+.workspace-tabs > button { color: #9A837E; }
+.classroom-contexts button, .classroom-zoom { border-color: #EDE3DA; background: #FFFCF8; color: #806964; }
+.classroom-contexts button[aria-pressed=true] { background: #76020E; border-color: #76020E; }
+.classroom-scenarios { border-color: #EDE3DA; background: #EDE3DA; }
+.classroom-scenarios button { color: #8C7773; }
+.classroom-scenarios button[aria-pressed=true] { color: #76020E; background: #FFF0CC; }
+.classroom-zoom button, #classroom-reset { color: #76020E; }
+.classroom-scene, #classroom-loading { background: #EDE3DA; }
+.classroom-scene-label, .classroom-caption { color: #795F58; }
+.observation-badge { border-color: #E7D2D0; color: #76020E; background: #FFF9F3; }
+.classroom-info h2, .classroom-info h3 { color: #4B322D; }
+.classroom-info > p, .classroom-counts span, .classroom-note, .classroom-activities small { color: #947C76; }
+.classroom-counts strong, .classroom-activities li { color: #76020E; }
+.pill { border-color: #E6D59E; color: #8C7773; background: #FFF9F3; }
+.view-tabs button, .stage-tag, .orbit-hint, .stage-bottom > .quiet, .pose-select, .slider-control > span, .custom-color, .editor-bottom, .stage-footer, .library-note, .tip, .tip p { color: #8C7773; }
+.view-tabs button.active { color: #76020E; }
+.stage-tools > span { border-color: #EDE3DA; }
+.pose-select { background: #FFFCF8; border-color: #EDE3DA; }
+.pose-select select { color: #6E5752; }
+.stage-footer .creator { color: #76020E; }
+::-webkit-scrollbar-thumb { background: #E1D2C9; }
+
+/* Keep classroom choices in one compact toolbar row. */
+.classroom-toolbar { min-height: 46px; margin-bottom: 8px; }
+.classroom-menu-group { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.classroom-menu-group .classroom-contexts { flex-wrap: nowrap; }
+.classroom-menu-group .classroom-contexts button { white-space: nowrap; padding: 9px 13px; }
+#classroom-context-description { margin: 0 0 16px; }
+#classroom-context-description:empty { display: none; }
+@media (max-width: 850px) { .classroom-menu-group { gap: 10px; } }
+@media (max-width: 600px) { .classroom-toolbar { align-items: flex-start; flex-direction: column; } .classroom-menu-group { width: 100%; justify-content: space-between; } .classroom-camera-tools { align-self: flex-end; } .classroom-menu-group .classroom-contexts button { padding: 8px 10px; } }
+.brand { color: #76020E; }
+.brand-icon { background: #f4e3e5; color: #76020E; }
+.status-dot { background: #76020E; }
+.primary:hover { background: #57000A; }
+.workspace-tabs > button[aria-selected=true] { color: #76020E; border-color: #76020E; }
+.editor-tabs button.active { color: #76020E; border-color: #76020E; background: #f8edef; }
+.stage-footer .creator { margin-left: auto; color: #76020E; }
+.stage-footer .creator a { color: inherit; text-decoration: none; font-weight: 600; }
+.stage-footer .creator a:hover { text-decoration: underline; }
+@media (max-width: 1150px) { .stage-footer .creator { font-size: 8px; } }
+@media (max-width: 600px) { .stage-footer { height: auto; min-height: 42px; padding: 6px 12px; flex-wrap: wrap; } .stage-footer .creator { width: 100%; margin-left: 0; justify-content: center; } }
 @media (max-width: 850px) {
   .workspace { height: calc(100dvh - 122px); }
   .classroom-layout { grid-template-columns: 1fr; }

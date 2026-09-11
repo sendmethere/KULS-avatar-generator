@@ -1,4 +1,4 @@
-# KULS Avatar Generator
+# KULS Avatar Simulator
 
 기본 도형을 조합하는 로컬 3D 아바타 제작 스튜디오입니다. 웹에서 조절한 모델을 Blender에서 편집하고 Unity로 옮길 수 있습니다. 생성은 **절차적 도형 조합**이며, 외부 생성형 AI API·사진 분석·텍스트 모델 생성은 연결하지 않았습니다.
 
@@ -79,7 +79,7 @@ npm start
 
 소스를 수정하며 실행하려면 `npm run dev`를 사용합니다. `.blend`·`.fbx`·`.glb`와 설정 JSON은 앱의 내보내기로 저장할 수 있습니다. `examples/`에는 편집 가능한 샘플 모델과 설정이 포함되어 있습니다.
 
-![현재 아바타 예시](examples/refinements.png)
+![KULS Avatar Simulator 스튜디오 화면](public/showcase/studio.png)
 
 ## 커스터마이징
 

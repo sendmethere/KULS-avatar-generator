@@ -1,5 +1,6 @@
 const english = {
   '작은 조합, 무한한 캐릭터': 'Small choices, infinite characters', '로컬 스튜디오': 'Local studio', '자동 저장됨': 'Saved automatically',
+  '제작은: 엄태상 (Taesang Eom)': 'Created by: Taesang Eom',
   '사용 안내': 'Help', '불러오기': 'Load', '내보내기': 'Export', '닫기': 'Close', '아바타 스튜디오': 'Avatar Studio', '교실 시뮬레이션': 'Classroom Simulation',
   '어떤 모습으로 시작할까요?': 'Who would you like to create?', '마음에 드는 캐릭터를 골라 바꿔보세요.': 'Choose a character, then make it your own.',
   '새로운 조합 만들기': 'Create a new look', '매번 다른, 나만의 캐릭터': 'A different character every time', '스타터 컬렉션': 'Starter collection',
