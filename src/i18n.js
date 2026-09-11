@@ -1,6 +1,6 @@
 const english = {
   '작은 조합, 무한한 캐릭터': 'Small choices, infinite characters', '로컬 스튜디오': 'Local studio', '자동 저장됨': 'Saved automatically',
-  '사용 안내': 'Help', '불러오기': 'Load', '내보내기': 'Export', '아바타 스튜디오': 'Avatar Studio', '교실 시뮬레이션': 'Classroom Simulation',
+  '사용 안내': 'Help', '불러오기': 'Load', '내보내기': 'Export', '닫기': 'Close', '아바타 스튜디오': 'Avatar Studio', '교실 시뮬레이션': 'Classroom Simulation',
   '어떤 모습으로 시작할까요?': 'Who would you like to create?', '마음에 드는 캐릭터를 골라 바꿔보세요.': 'Choose a character, then make it your own.',
   '새로운 조합 만들기': 'Create a new look', '매번 다른, 나만의 캐릭터': 'A different character every time', '스타터 컬렉션': 'Starter collection',
   '도형 하나부터 나답게.': 'From simple shapes to your own style.', '모든 캐릭터는 직접 편집할 수 있어요.': 'Every character is ready to edit.',
@@ -29,6 +29,16 @@ const english = {
   '수업 듣기': 'Listening', '필기하기': 'Taking notes', '손들기': 'Raising hands', '고개 돌리기': 'Looking around', '수업 설명하기': 'Teaching', '이야기하기': 'Talking', '걸어 다니기': 'Walking around', '자리에서 쉬기': 'Resting at a desk', '교실 살펴보기': 'Checking the room', '교사': 'Teacher', '2명': '2 students', '3명': '3 students', '4명': '4 students',
   '같은 수업, 서로 다른 자세.': 'Same lesson, different poses.', '작은 움직임을 천천히 살펴보세요.': 'Watch the small movements unfold.', '친구와 이야기하고, 통로를 걷고.': 'Chat with friends, walk the aisles.', '쉬는 시간의 일상을 살펴보세요.': 'Observe everyday break-time moments.', '원하는 각도에서 관찰하세요.': 'Observe from any angle.', '아바타의 움직임은 자동으로 이어집니다.': 'Avatar motions continue automatically.',
   '다양한 헤어스타일과 일상복의 아바타가 함께하는 교실입니다.': 'A classroom with avatars in varied hairstyles and everyday outfits.',
+  '나만의 아바타, 처음부터 끝까지': 'Your avatar, from start to finish',
+  '조합하기': 'Build your look',
+  '스타터를 고르거나 새로운 조합을 만드세요. 피부색과 얼굴형, 체형, 나이, 머리, 옷을 독립적으로 조절할 수 있습니다.': 'Choose a starter or create a new look. Adjust skin tone, face shape, body, age, hair, and clothing independently.',
+  '표정과 움직임': 'Expressions and movement',
+  '표정 탭에서 6가지 감정과 시선을 조절하세요. 아래의 포즈 메뉴에서 걷기와 T 포즈를 확인하고, 뼈대 버튼으로 리깅을 볼 수 있습니다.': 'Use the Expression tab to adjust six emotions and gaze. Preview walking and a T-pose below, or use the skeleton button to view the rig.',
+  'Blender에서 편집': 'Edit in Blender',
+  '.blend 파일을 열어 파츠를 선택하고 Edit Mode에서 수정하세요. Armature의 Pose Mode로 포즈를 바꾸고, 눈·입·눈썹 메시의 Shape Keys로 표정을 조절합니다.': 'Open a .blend file, select a part, and edit it in Edit Mode. Change poses in the Armature Pose Mode and control expressions with the eye, mouth, and brow Shape Keys.',
+  'Unity에서 사용': 'Use in Unity',
+  'FBX를 Assets로 가져온 후 Rig → Humanoid → Create From This Model → Apply를 선택하세요. Configure에서 매핑과 T 포즈를 확인합니다. 손은 단순화되어 손가락 본은 없습니다.': 'Import the FBX into Assets, then choose Rig → Humanoid → Create From This Model → Apply. Check mapping and the T-pose in Configure. Hands are simplified and have no finger bones.',
+  '현재 생성은 기본 도형을 조합하는 로컬 절차적 생성 방식입니다. 외부 생성형 AI나 사진 분석은 연결하지 않았습니다. 얼굴의 6개 Shape Key는 웃음·정색·슬픔·화남·당황·눈 깜빡임이며 보통 표정은 기본 형태입니다.': 'This is a local procedural generator built from basic shapes. It does not connect to external generative AI or photo analysis. Six facial Shape Keys control smile, serious, sad, angry, surprised, and blink; neutral is the base shape.',
 };
 
 const attributes = ['aria-label', 'title', 'placeholder'];
