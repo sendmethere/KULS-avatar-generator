@@ -17,6 +17,10 @@ assert.equal(students.filter(a => a.config.hairColor === '#211c1b').length, 8);
 assert.ok(students.every(a => ['uniform', 'cardigan'].includes(a.config.shirt)));
 assert.ok(classroomRoster('general')[0].config.headWidth < PRESETS[1].headWidth);
 assert.ok(koreanRoster[0].config.headWidth < .96);
+for (const feature of ['headWidth', 'headLength', 'jaw', 'eyeSize', 'eyeAlmond', 'eyeSpacing', 'noseSize', 'mouthWidth']) {
+  assert.ok(new Set(students.map(({ config }) => config[feature])).size >= 5, `Expected varied ${feature} values in the classroom roster.`);
+}
+assert.equal(new Set(students.map(({ config }) => config.browShape)).size, 4);
 for (const config of [classroomRoster('general')[2].config, koreanRoster[6].config]) {
   const avatar = createAvatar(config, { tpose: true });
   try {
