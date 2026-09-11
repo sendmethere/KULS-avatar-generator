@@ -2,7 +2,7 @@ import * as T from 'three';
 
 // One closed, connected shell from crown to hem. The volume setting changes
 // fullness along the lengths while keeping the forehead roots on the scalp.
-export function createHairShell(c, { rx, ry, rz, headY }) {
+export function createHairShell(c, { rx, ry, rz, headY, skull }) {
   const perm = c.hair === 'dandy_perm';
   const loose = ['bob', 'long', 'waves'].includes(c.hair);
   const length = c.hair === 'bob' ? ry * .73 : loose ? ry + .18 : 0;
@@ -47,6 +47,13 @@ export function createHairShell(c, { rx, ry, rz, headY }) {
       const ax=rx*faceWidth*cross+clearance,az=rz*cross+clearance;
       const ratio=Math.hypot(result.x/ax,result.z/az);
       if(ratio>1e-6&&ratio<1){result.x/=ratio;result.z/=ratio;}
+    }
+    // 실제 두피(avatar.js 가 만든 머리 정점) 밖에 있게 한다. 위의 얼굴 검사는 폭 공식만
+    // 베낀 것이라 마루뼈 부풀림·이마 폭을 모르고, 그 자리에서 두피가 셸을 뚫었다.
+    if(skull){
+      const dx=result.x/rx,dy=(result.y-headY)/ry,dz=result.z/rz,r=Math.hypot(dx,dy,dz);
+      const minR=skull(Math.acos(T.MathUtils.clamp(dy/r,-1,1)),Math.atan2(dx,dz))+(inner?.006:.018)/((rx+ry+rz)/3);
+      if(r<minR){const k=minR/r;result.x*=k;result.z*=k;result.y=headY+(result.y-headY)*k;}
     }
     // Loose hair covers the ear region continuously instead of being pierced by it.
     const earY=(result.y-(headY-.025))/.145;

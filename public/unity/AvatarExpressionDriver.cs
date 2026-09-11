@@ -14,6 +14,10 @@ public class AvatarExpressionDriver : MonoBehaviour
     [Range(0, 1)] public float blink;
     struct Shape { public SkinnedMeshRenderer renderer; public int index; public string name; }
     readonly List<Shape> shapes = new List<Shape>();
+    // Only the eye meshes carry a blink key. Absolute blendshapes blend linearly, so on those
+    // meshes the expression has to fade out as the lid closes or it pushes the lid past the
+    // eye axis and the eyelid inverts. The brows and mouth have no blink key and keep theirs.
+    readonly HashSet<SkinnedMeshRenderer> blinkers = new HashSet<SkinnedMeshRenderer>();
     Transform leftEye, rightEye;
     Quaternion leftRest, rightRest;
     void Awake()
@@ -28,6 +32,7 @@ public class AvatarExpressionDriver : MonoBehaviour
                 var split = name.LastIndexOf('.');
                 if (split >= 0) name = name.Substring(split + 1);
                 shapes.Add(new Shape { renderer = renderer, index = i, name = name });
+                if (name == "blink") blinkers.Add(renderer);
             }
         }
         foreach (var bone in GetComponentsInChildren<Transform>(true))
@@ -45,7 +50,9 @@ public class AvatarExpressionDriver : MonoBehaviour
         string active = expression.ToString().ToLowerInvariant();
         foreach (var shape in shapes)
         {
-            float weight = shape.name == "blink" ? Mathf.Clamp01(blinkWeight) : shape.name == active ? intensity : 0;
+            float lid = Mathf.Clamp01(blinkWeight);
+            float open = blinkers.Contains(shape.renderer) ? intensity * (1 - lid) : intensity;
+            float weight = shape.name == "blink" ? lid : shape.name == active ? open : 0;
             shape.renderer.SetBlendShapeWeight(shape.index, weight * 100);
         }
         // Imported FBX bone axes can differ; rotate in the avatar root's coordinate frame.

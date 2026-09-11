@@ -14,3 +14,10 @@ examples/*.png
 !examples/skirt-walk.png
 !examples/studio-desktop.png
 !examples/studio-mobile.png
+
+# 세션 보고서와 그 삽화. 커밋 대상 아님.
+REPORT-*.md
+pipeline-*.jpg
+
+# 파이프라인 산출물과 지출 기록. 커밋 대상 아님.
+pipeline/out/
