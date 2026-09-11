@@ -4,6 +4,8 @@ A simple local 3D avatar studio for creating characters and observing a classroo
 
 ![KULS Avatar Simulator studio](public/showcase/studio.png)
 
+![Students during break time](public/showcase/classroom-break-closeup.png)
+
 ## What you can do
 
 - Create a 3D avatar with face, hair, body, clothes, and expressions.
